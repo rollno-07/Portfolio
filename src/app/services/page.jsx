@@ -8,25 +8,25 @@ const services = [
   {
     num: "01",
     title: "Web Development",
-    description: "ctvygbuhnjk",
+    description: "",
     href: "/",
   },
   {
     num: "02",
-    title: "JavaScript Developer",
-    description: "sdfghxcvbnrtyhjkftgyuj",
+    title: "JavaScript Development",
+    description: "",
     href: "/",
   },
   {
     num: "03",
-    title: "ReactJS Developer",
-    description: "dftvygbuhnijmctvygbuh",
+    title: "ReactJS Development",
+    description: "",
     href: "/",
   },
   {
     num: "04",
-    title: "NextJS Developer",
-    description: "ftyvbuhnjtvybun",
+    title: "NextJS Development",
+    description: "",
     href: "/",
   },
 ];
@@ -59,7 +59,9 @@ const Services = () => {
                       <BsArrowDownRight className="text-primary text-3xl" />
                     </Link>
                   </div>
-                  <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
+                  <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                    {service.title}
+                  </h2>
                   <p className="text-white/60">{service.description}</p>
                   <div className="border-b border-white/20 w-full"></div>
                 </div>
