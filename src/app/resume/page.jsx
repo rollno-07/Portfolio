@@ -57,8 +57,9 @@ const about = {
 
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
-  description: "asdfghjertyui",
+  title: "My Experience",
+  description:
+    "Offering 5.3 years of progressive experience in owning web-based projects from concept and design through testing, implementation and client updates. Diligent about producing exceptionally clean, strong and secure code.",
   items: [
     {
       company: "Srijan Technologies PVT. LTD.",
@@ -74,20 +75,22 @@ const experience = {
 };
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
-  description: "asdfghjertyui",
+  title: "My Education",
+  description:
+    "I completed my Bachelor of Technology (B.Tech) in Electronics and Communication Engineering from ITM University, Gwalior, from June 2013 to May 2017. During these four years, I developed a strong foundation in electronics, communication systems, and digital technologies. My coursework included subjects such as microprocessors, signal processing, wireless communication, and embedded systems. I actively participated in various technical projects and workshops, which honed my problem-solving skills and deepened my understanding of the field.",
   items: [
     {
       institution: "ITM University Gwalior",
-      Degree: "B-tech(Electronics and Communication Engineering)",
-      duration: "Junw 2013 - May 2017",
+      degree: "B-Tech(Electronics & Communication Engineering)",
+      duration: "June 2013 - May 2017",
     },
   ],
 };
 
 const skills = {
-  title: "My skills",
-  description: "sdfghjdcvbnfghj",
+  title: "My Skills",
+  description:
+    "Proficient in ES6+, strong understanding of asynchronous programming, and experience with various JavaScript libraries and frameworks. I excel at writing clean, maintainable code and debugging complex issues. Expertise in building dynamic and responsive user interfaces, state management using Redux and Context API, and utilising React hooks for functional components. I have a knack for optimising performance and improving user experience. Strong foundation in semantic HTML and modern CSS, including Flex-box and Grid. I have a good eye for design, ensuring pixel-perfect implementation, and am adept at making web applications responsive and accessible.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -154,32 +157,83 @@ const Resume = () => {
                 </p>
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {
-                      experience.items.map((item, index) => {
-                        return <li>
-                          <span>{item.duration}</span>
-                          <h3>{item.position}</h3>
-                          <div>
-                            <span></span>
-                            <p>{ item.company}</p>
+                    {experience.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.position}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent "></span>
+                            <p className="text-white/60 xl:text-[13px]">
+                              {item.company}
+                            </p>
                           </div>
                         </li>
-                      })
-                    }
+                      );
+                    })}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <h3 className="text-4xl font-bold">{education.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {experience.description}
+                  {education.description}
                 </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.degree}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent "></span>
+                            <p className="text-white/60 xl:text-[13px]">
+                              {item.institution}
+                            </p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value="skills" className="w-full">
-              skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl-mx-0">
+                  {skills.description}
+                </p>
+              </div>
+              <ul className="grid grid-cols sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] ">
+                {skills.skillList.map((skill, index) => {
+                  return <li key={index}>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <div>{ skill.icon}</div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{skill.name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </li>;
+                })}
+              </ul>
             </TabsContent>
             <TabsContent value="about" className="w-full">
               About me
