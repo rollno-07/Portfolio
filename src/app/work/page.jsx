@@ -24,12 +24,7 @@ const projects = [
     category: "frontend",
     title: "project1",
     description: "CapitalOne Bank US",
-    stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "JavaScript" },
-      { name: "ReactJs" },
-    ],
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
     image: "/assets/work/CapitalOne.png",
     live: "https://www.capitalone.com/",
     github: "",
@@ -39,12 +34,7 @@ const projects = [
     category: "frontend",
     title: "project2",
     description: " Credit Suisse",
-    stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "JavaScript" },
-      { name: "ReactJs" },
-    ],
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
     image: "/assets/work/CreditSuisse.png",
     live: "https://www.credit-suisse.com/in/en.html",
     github: "",
@@ -54,12 +44,7 @@ const projects = [
     category: "frontend",
     title: "project3",
     description: "Nataxis Investment Banking",
-    stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "JavaScript" },
-      { name: "ReactJs" },
-    ],
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
     image: "/assets/work/Nataxis.png",
     live: "https://cib.natixis.com/home/",
     github: "",
@@ -80,6 +65,22 @@ const projects = [
     live: "https://yamaha-motor.com/",
     github: "",
   },
+  {
+    num: "05",
+    category: "frontend",
+    title: "project4",
+    description: "Portfolio",
+    stack: [
+      { name: "Html 5" },
+      { name: "Css 3" },
+      { name: "JavaScript" },
+      { name: "ReactJs" },
+      { name: "NextJs" },
+    ],
+    image: "/assets/work/Portfolio.png",
+    live: "https://portfolio-9by1-git-main-rollno07s-projects.vercel.app/",
+    github: "https://github.com/rollno-07/Portfolio",
+  },
 ];
 
 const Work = () => {
@@ -92,7 +93,10 @@ const Work = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1,transition:{delay:2.4,duration:0.4,ease:"easeIn"} }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
@@ -169,7 +173,10 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
-              <SliderButtons containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none " btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[35px] h-[35px] flex justify-center items-center transitiona-all rounded"/>
+              <SliderButtons
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none "
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[35px] h-[35px] flex justify-center items-center transitiona-all rounded"
+              />
             </Swiper>
           </div>
         </div>
